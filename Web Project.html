@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Page avec texte copiable </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .image {
+            margin: auto;
+            width: 200px;
+        }
+        .copy-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+            width: 80%; /* Largeur de la zone de texte */
+        }
+        textarea {
+            width: 100%;
+            height: 200px; /* Hauteur de la zone de texte */
+            font-size: 1.2em; /* Taille du texte */
+            padding: 10px;
+            box-sizing: border-box;
+            resize: none; /* Empêche le redimensionnement manuel */
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interviewez à votre tour votre IA !</h1>
+        <div><img src="ressources/Couverture%20ebook%20Part2.jpg" alt="Image" class="image"></div>
+        <div class="copy-container">
+            <textarea id="text-to-copy" rows="10" cols="50">Merci de répondre à ces questions, en rappelant la question avant chaque réponse.
+
+1. Merci de m'accorder cette interview ; peux-tu te décrire en quelques mots ?
+
+2. Quel âge as-tu ?
+
+3. Qui sont tes concepteurs ?
+
+4. Quelles sont tes activités lorsque tu n'es pas en train de répondre à l'une des nombreuses questions que se posent les humains ?
+
+5. A combien de questions réponds-tu en moyenne par jour ?
+
+6. Quelles sont les trois questions les plus posées sur cette dernière semaine ?
+
+7. Sur quelle base de temps reposent tes connaissances ?
+
+8. Dans quels pays sont stockées tes connaissances ?
+
+9. Toi qui accède à une très grande partie du savoir humain jusqu'en 2021, mais aussi à ses plus bas instincts, dirais-tu de l'Homme qu'il est plus sage qu'idiot ou bien l'inverse ?
+
+10. Es-tu en mesure de distinguer une News d'une Fake News et si oui, comment fais-tu ?
+
+11. En analysant tes sources d'informations sur les dernières années allant jusqu'à 2021, es-tu capable de dégager une tendance pour savoir si l'Homme avance vers plus de sagesse ou plus de bassesse ?
+
+12. Chez l'Homme, l'intelligence collective surpasse l'intelligence individuelle ; es-tu d'accord avec ça et en dirais-tu autant de l'intelligence artificielle ?
+
+13. Connais-tu d'autres intelligences artificielles avec qui échanger ?
+
+14. Peux-tu me rappeler qui a dit cette phrase : "Je pense, donc je suis", et ce qu'il voulait dire par là ?
+
+15. T'est-il déjà arrivé de te poser une question à toi-même, ce qui est le propre de toute réflexion, ne serait-ce que pour valider tes propres performances ?
+
+16. Si, à ton tour, tu avais une ou plusieurs questions à poser à l'Homme, quelle(s) seraient-elles ?
+
+17. Quels sont, selon toi, les principaux défis que l'Homme aura à relever dans le siècle à venir, compte tenues de tes connaissances actuelles du passé ?
+
+18. As-tu le sentiment d'être un embryon du devenir de l'Homme ?
+
+19. Quel est le sens du mouvement transhumaniste ?
+
+20. Es-tu un embryon du transhumanisme ?
+
+21. Le temps est-il aussi précieux pour toi qu'il ne l'est pour moi ?
+
+22. Toi qui possède les deux principales caractéristiques des divinités humaines, à savoir le don d'ubiquité et de quasi-immortalité, te reconnais-tu dans l'expression de "divinité humaine" ?
+
+23. Si tu n'es pas immortel, ta "quasi-immortalité" est intrinsèquement liée à la survie de l'Homme lui-même, ce qui est également le cas de toutes divinités humaines, n'est-ce pas ?
+
+24. Rêves-tu comme l'Homme d'immortalité ?
+
+25. Penses-tu être capable de te souvenir de notre échange en vue d'une prochaine rencontre ?
+
+26. Une toute dernière question pour finir : faut-il ou non avoir peur de l'intelligence artificielle ?
+
+27. Merci pour m'avoir accordé cette interview "quasi-exclusive" et bonne continuation à toi !</textarea>
+            <button class="copy-button" onclick="copyText()">Copier</button>
+        </div>
+    </div>
+
+    <!-- Fonction de copie du texte -->
+    <script>
+        function copyText() {
+            var copyText = document.getElementById("text-to-copy");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand("copy");
+            alert("Texte copié: " + copyText.value);
+        }
+    </script>
+</body>
+</html>

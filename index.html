@@ -31,37 +31,43 @@
             background-color: white; /* Assure que le fond reste blanc */
             padding: 10px; /* Assure un espacement autour du contenu */
         }
-        textarea {
-            border: 1px solid transparent; /* Enlève la bordure noire */
-            outline: none; /* Enlève le contour */
-            box-shadow: none; /* Enlève toute ombre */
-            background-color: white; /* Assure que le fond est blanc */
-            color: black; /* Assure que le texte est noir pour une bonne visibilité */
-            padding: 10px; /* Ajoute un peu de marge interne pour le confort */
-            padding-right: 20px; /* Ajoute de l'espace à droite pour la barre de défilement */
-            resize: none; /* Empêche le redimensionnement si souhaité */
-            scrollbar-width: thin; /* Réduit la largeur de la barre de défilement dans Firefox */
-            width: 100%; /* Ajuste la largeur du textarea à son conteneur */
-            height: 200px; /* Hauteur de la zone de texte */
-            font-size: 1.2em; /* Taille du texte */
-        }
         
-        /* Largeur de la barre de défilement */
-        textarea::-webkit-scrollbar {
-            width: 8px; /* Largeur de la barre de défilement */
-        }
+        /* Styles pour le textarea */
+textarea {
+    border: 1px solid transparent; /* Enlève la bordure noire */
+    outline: none; /* Enlève le contour */
+    box-shadow: none; /* Enlève toute ombre */
+    background-color: white; /* Fond blanc pour le textarea */
+    color: black; /* Couleur du texte */
+    padding: 10px; /* Ajoute une marge interne pour le confort */
+    padding-right: 20px; /* Ajoute de l'espace à droite pour la barre de défilement */
+    resize: none; /* Empêche le redimensionnement */
+    width: 100%; /* Ajuste la largeur du textarea à son conteneur */
+    height: 100px; /* Ajuste la hauteur du textarea */
+    overflow: auto; /* Affiche la barre de défilement si nécessaire */
+    box-sizing: border-box; /* Inclut la bordure et le padding dans la hauteur totale */
+}
 
-        /* Partie mobile de la barre de défilement */
-        textarea::-webkit-scrollbar-thumb {
-            background-color: #E07A5F; /* Couleur teracota de la partie mobile */
-            border-radius: 10px; /* Arrondir les coins de la barre de défilement */
-        }
+/* Pour WebKit (Chrome, Safari, Edge) */
+textarea::-webkit-scrollbar {
+    width: 8px; /* Largeur de la barre de défilement */
+}
 
-        /* Partie fixe de la barre de défilement (en haut et en bas) */
-        textarea::-webkit-scrollbar-track {
-            background-color: white; /* Couleur blanche pour les parties non utilisées de la barre de défilement */
-        }
-                       
+textarea::-webkit-scrollbar-thumb {
+    background-color: #E07A5F; /* Couleur teracota de la partie mobile */
+    border-radius: 10px; /* Arrondir les coins de la barre de défilement */
+}
+
+textarea::-webkit-scrollbar-track {
+    background-color: white; /* Couleur blanche pour les parties non utilisées de la barre de défilement */
+}
+
+/* Pour Firefox */
+textarea {
+    scrollbar-color: #E07A5F white; /* Couleur teracota pour la partie mobile, blanc pour la partie fixe */
+    scrollbar-width: thin; /* Réduit la largeur de la barre de défilement */
+}
+                     
        .copy-button {
             position: absolute;
             top: 5px; /* Ajuste la position du bouton depuis le haut du cadre */

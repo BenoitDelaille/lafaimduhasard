@@ -27,6 +27,9 @@
             display: inline-block;
             margin-top: 20px;
             width: 80%; /* Largeur de la zone de texte */
+            padding: 5px; /* Ajoute un peu de padding pour que le bouton soit à l'intérieur du cadre blanc */
+            border: 1px solid #ccc; /* Ajoute une bordure pour mieux visualiser le cadre blanc */
+            background: #fff; /* Assure que le fond du cadre est blanc */
         }
         textarea {
             width: 100%;
@@ -38,9 +41,9 @@
         }
        .copy-button {
             position: absolute;
-            top: 0;
-            right: 0;
-            padding: 5px;
+            top: 5px; /* Ajuste la position du bouton depuis le haut du cadre */
+            right: 5px; /* Ajuste la position du bouton depuis le côté droit du cadre */
+            padding: 5px 10px; /* Ajuste le padding du bouton */
             background: #e07a5f; /* Couleur terre cuite */
             color: white;
             border: none;

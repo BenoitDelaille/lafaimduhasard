@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Page avec texte copiable </title>
+    <title>Page avec texte copiable</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,81 +17,68 @@
         }
         .container {
             text-align: center;
+            width: 80%; /* Largeur maximale de la page */
+            max-width: 1200px; /* Largeur maximale du conteneur */
         }
         .image {
-            margin: auto;
             width: 200px;
+            margin-bottom: 20px; /* Espacement entre l'image et le premier cadre */
         }
         .notice, .copy-container {
             background-color: white;
-            border: 1px solid white; /* Pour enlever le cadre noir */
+            border: 1px solid white; /* Éviter le cadre noir */
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombrage léger */
             padding: 20px;
-            margin-top: 20px;
-            width: 300px; /* Ajuste la largeur du cadre blanc */
+            margin: 20px auto; /* Espacement vertical et centrage horizontal */
+            width: 100%;
+            max-width: 600px; /* Largeur maximale du cadre blanc */
         }
         .copy-container {
             position: relative;
-            display: inline-block;
-            margin-top: 20px;
-            width: 80%; /* Largeur de la zone de texte */
-            border: 1px solid transparent; /* Enlève toute bordure visible, remplace par transparent si besoin */
-            background-color: white; /* Assure que le fond reste blanc */
-            padding: 10px; /* Assure un espacement autour du contenu */
         }
-        
-        /* Styles pour le textarea */
-textarea {
-    border: 1px solid transparent; /* Enlève la bordure noire */
-    outline: none; /* Enlève le contour */
-    box-shadow: none; /* Enlève toute ombre */
-    background-color: white; /* Fond blanc pour le textarea */
-    color: black; /* Couleur du texte */
-    padding: 10px; /* Ajoute une marge interne pour le confort */
-    padding-right: 20px; /* Ajoute de l'espace à droite pour la barre de défilement */
-    resize: none; /* Empêche le redimensionnement */
-    width: 100%; /* Ajuste la largeur du textarea à son conteneur */
-    height: 100px; /* Ajuste la hauteur du textarea */
-    overflow: auto; /* Affiche la barre de défilement si nécessaire */
-    box-sizing: border-box; /* Inclut la bordure et le padding dans la hauteur totale */
-}
-
-/* Pour WebKit (Chrome, Safari, Edge) */
-textarea::-webkit-scrollbar {
-    width: 8px; /* Largeur de la barre de défilement */
-}
-
-textarea::-webkit-scrollbar-thumb {
-    background-color: #E07A5F; /* Couleur teracota de la partie mobile */
-    border-radius: 10px; /* Arrondir les coins de la barre de défilement */
-}
-
-textarea::-webkit-scrollbar-track {
-    background-color: white; /* Couleur blanche pour les parties non utilisées de la barre de défilement */
-}
-
-/* Pour Firefox */
-textarea {
-    scrollbar-color: #E07A5F white; /* Couleur teracota pour la partie mobile, blanc pour la partie fixe */
-    scrollbar-width: thin; /* Réduit la largeur de la barre de défilement */
-}
-                     
-       .copy-button {
+        .copy-button {
             position: absolute;
-            top: 5px; /* Ajuste la position du bouton depuis le haut du cadre */
-            right: 5px; /* Ajuste la position du bouton depuis le côté droit du cadre */
+            top: 10px; /* Ajuste la position du bouton depuis le haut du cadre */
+            right: 10px; /* Ajuste la position du bouton depuis le côté droit du cadre */
             padding: 5px 10px; /* Ajuste le padding du bouton */
-            background: #e07a5f; /* Couleur terre cuite */
+            background: #E07A5F; /* Couleur terracotta */
             color: white;
             border: none;
-            outline: none; /* Enlève le contour du bouton */
-            cursor: pointer;
             border-radius: 4px; /* Bordures arrondies pour un effet plus doux */
+            cursor: pointer;
             transition: background-color 0.3s; /* Transition douce pour le changement de couleur */
         }
         .copy-button:hover {
-            background: #2cbf44; /* Couleur verte (#c77d6c;) Couleur terre cuite foncé */
+            background: #2cbf44; /* Couleur verte */
+        }
+        textarea {
+            border: 1px solid transparent; /* Enlève la bordure noire */
+            outline: none; /* Enlève le contour */
+            background-color: white; /* Fond blanc pour le textarea */
+            color: black; /* Couleur du texte */
+            padding: 10px; /* Ajoute une marge interne pour le confort */
+            padding-right: 20px; /* Ajoute de l'espace à droite pour la barre de défilement */
+            resize: none; /* Empêche le redimensionnement */
+            width: 100%; /* Ajuste la largeur du textarea à son conteneur */
+            height: 100px; /* Ajuste la hauteur du textarea */
+            overflow: auto; /* Affiche la barre de défilement si nécessaire */
+            box-sizing: border-box; /* Inclut la bordure et le padding dans la hauteur totale */
+        }
+        /* Styles pour la barre de défilement */
+        textarea::-webkit-scrollbar {
+            width: 8px; /* Largeur de la barre de défilement */
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background-color: #E07A5F; /* Couleur terracotta de la partie mobile */
+            border-radius: 10px; /* Arrondir les coins de la barre de défilement */
+        }
+        textarea::-webkit-scrollbar-track {
+            background-color: white; /* Couleur blanche pour les parties non utilisées de la barre de défilement */
+        }
+        textarea {
+            scrollbar-color: #E07A5F white; /* Couleur terracotta pour la partie mobile, blanc pour la partie fixe */
+            scrollbar-width: thin; /* Réduit la largeur de la barre de défilement */
         }
     </style>
 </head>
@@ -99,6 +86,15 @@ textarea {
     <div class="container">
         <h1>Interviewez à votre tour votre IA !</h1>
         <div><img src="Ressources/Couverture ebook Part2.jpg" alt="Image" class="image"></div>
+        <!-- Deuxième cadre blanc pour la notice d'utilisation -->
+        <div class="notice">
+            <h2>Notice d'utilisation</h2>
+            <p>Voici comment utiliser cette interview prête à l'emploi. Assurez-vous de suivre ces instructions pour tirer le meilleur parti de cette fonctionnalité.</p>
+            1. Cliquez sur le bouton Copier <br>
+            2. Coller le texte dans le Chat de votre IA préférée <br>
+            3. Découvrez les réponses de cette interview dans le Chat de votre IA !
+        </div>
+        <!-- Premier cadre avec le texte à copier et le bouton -->
         <div class="copy-container">
             <textarea id="text-to-copy" rows="10" cols="50">Merci de répondre à ces questions, en rappelant la question avant chaque réponse.
 
@@ -164,9 +160,9 @@ textarea {
         function copyText() {
             var copyText = document.getElementById("text-to-copy");
             copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
+            copyText.setSelectionRange(0, 99999); // Pour les appareils mobiles
             document.execCommand("copy");
-            alert("Texte copié: " + copyText.value);
+            alert("Texte copié !");
         }
     </script>
 </body>

@@ -32,12 +32,16 @@
             padding: 10px; /* Assure un espacement autour du contenu */
         }
         textarea {
-            width: 100%;
+            border: 1px solid transparent; /* Enlève la bordure noire */
+            outline: none; /* Enlève le contour */
+            box-shadow: none; /* Enlève toute ombre */
+            background-color: white; /* Assure que le fond est blanc */
+            color: black; /* Assure que le texte est noir pour une bonne visibilité */
+            padding: 10px; /* Ajoute un peu de marge interne pour le confort */
+            resize: none; /* Empêche le redimensionnement si souhaité */
+            width: 100%; /* Ajuste la largeur du textarea à son conteneur */
             height: 200px; /* Hauteur de la zone de texte */
             font-size: 1.2em; /* Taille du texte */
-            padding: 10px;
-            box-sizing: border-box;
-            resize: none; /* Empêche le redimensionnement manuel */
         }
        .copy-button {
             position: absolute;

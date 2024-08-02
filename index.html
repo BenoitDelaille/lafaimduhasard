@@ -34,38 +34,46 @@
             width: 100%;
             max-width: 600px; /* Largeur maximale du cadre blanc */
         }
-        .copy-container {
-            position: relative;
-            padding-top: 30px; /* Ajuste cette valeur pour déplacer le texte plus bas */
-        }
-        .copy-button {
-            position: absolute;
-            top: 10px; /* Ajuste la position du bouton depuis le haut du cadre */
-            right: 10px; /* Ajuste la position du bouton depuis le côté droit du cadre */
-            padding: 5px 10px; /* Ajuste le padding du bouton */
-            background: #E07A5F; /* Couleur terracotta */
-            color: white;
-            border: none;
-            border-radius: 4px; /* Bordures arrondies pour un effet plus doux */
-            cursor: pointer;
-            transition: background-color 0.3s; /* Transition douce pour le changement de couleur */
-        }
-        .copy-button:hover {
-            background: #2cbf44; /* Couleur verte */
-        }
-        textarea {
-            border: 1px solid transparent; /* Enlève la bordure noire */
-            outline: none; /* Enlève le contour */
-            background-color: white; /* Fond blanc pour le textarea */
-            color: black; /* Couleur du texte */
-            padding: 10px; /* Ajoute une marge interne pour le confort */
-            padding-right: 20px; /* Ajoute de l'espace à droite pour la barre de défilement */
-            resize: none; /* Empêche le redimensionnement */
-            width: 100%; /* Ajuste la largeur du textarea à son conteneur */
-            height: 100px; /* Ajuste la hauteur du textarea */
-            overflow: auto; /* Affiche la barre de défilement si nécessaire */
-            box-sizing: border-box; /* Inclut la bordure et le padding dans la hauteur totale */
-        }
+.copy-container {
+    display: flex;
+    flex-direction: column; /* Dispose les éléments en colonne */
+    align-items: flex-start; /* Aligne les éléments au début du conteneur */
+    padding: 20px; /* Ajoute du padding autour du conteneur */
+    margin: 20px auto; /* Espacement vertical et centrage horizontal */
+    width: 100%;
+    max-width: 600px; /* Largeur maximale du cadre blanc */
+    background-color: white;
+    border: 1px solid white; /* Éviter le cadre noir */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombrage léger */
+}
+.copy-button {
+    padding: 5px 10px; /* Ajuste le padding du bouton */
+    background: #E07A5F; /* Couleur terracotta */
+    color: white;
+    border: none;
+    border-radius: 4px; /* Bordures arrondies pour un effet plus doux */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transition douce pour le changement de couleur */
+    margin-bottom: 10px; /* Espacement sous le bouton */
+}
+.copy-button:hover {
+    background: #2cbf44; /* Couleur verte */
+}
+textarea {
+    border: 1px solid transparent; /* Enlève la bordure noire */
+    outline: none; /* Enlève le contour */
+    background-color: white; /* Fond blanc pour le textarea */
+    color: black; /* Couleur du texte */
+    padding: 10px; /* Ajoute une marge interne pour le confort */
+    padding-right: 20px; /* Ajoute de l'espace à droite pour la barre de défilement */
+    resize: none; /* Empêche le redimensionnement */
+    width: 100%; /* Ajuste la largeur du textarea à son conteneur */
+    height: 100px; /* Ajuste la hauteur du textarea */
+    overflow: auto; /* Affiche la barre de défilement si nécessaire */
+    box-sizing: border-box; /* Inclut la bordure et le padding dans la hauteur totale */
+}
+
         /* Styles pour la barre de défilement */
         textarea::-webkit-scrollbar {
             width: 8px; /* Largeur de la barre de défilement */
@@ -96,8 +104,9 @@
             3. Découvrez les réponses de cette interview dans le Chat de votre IA !
         </div>
         <!-- Premier cadre avec le texte à copier et le bouton -->
-        <div class="copy-container">
-            <textarea id="text-to-copy" rows="10" cols="50">Merci de répondre à ces questions, en rappelant la question avant chaque réponse.
+      <div class="copy-container">
+    <button class="copy-button" onclick="copyText()">Copier</button>
+    <textarea id="text-to-copy" rows="10" cols="50">Merci de répondre à ces questions, en rappelant la question avant chaque réponse.
 
 1. Merci de m'accorder cette interview ; peux-tu te décrire en quelques mots ?
 
@@ -152,7 +161,6 @@
 26. Une toute dernière question pour finir : faut-il ou non avoir peur de l'intelligence artificielle ?
 
 27. Merci pour m'avoir accordé cette interview "quasi-exclusive" et bonne continuation à toi !</textarea>
-            <button class="copy-button" onclick="copyText()">Copier</button>
         </div>
     </div>
 

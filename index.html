@@ -9,64 +9,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <style>
-        // <uniquifier>: Use a unique and descriptive class name
-        // <weight>: Use a value from 200 to 1000
-
-        .nunito-<uniquifier> {
-              font-family: "Nunito", sans-serif;
-              font-optical-sizing: auto;
-              font-weight: <weight>;
-              font-style: normal;
-            }    
-               
+    <style>        
         body {
-            /* font-family: Arial, sans-serif; */
+            font-family: Arial, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: #E2725B; /* Couleur terracotta */
         }
         .container {
-            text-align: center;
-            width: 100%; /* Largeur maximale de la page */
+            text-align: center; 
+            width: 100%;  /*Largeur maximale de la page */
             max-width: 1200px; /* Largeur maximale du conteneur */
+            margin: 50px; /* Espacement autour du conteneur */
         }
         .image {
-            width: 200px;
-            margin-top: 5px; /* Augmente l'espace au-dessus de l'image */
-            margin-bottom: 5px; /* Espacement entre l'image et le premier cadre */
+            width: 100%; /* Ajuste la largeur de l'image à son conteneur */
+            max-width: 200px; /* Largeur maximale de l'image */
+            margin: 50px;
         }
-        .notice {
+        .notice-conatainer {
             background-color: white;
-            border: 1px solid white; /* Éviter le cadre noir */
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombrage léger */
-            padding: 2px 20px 20px 20px; /* Réduit le padding en haut */
-            width: 100%;
-            max-width: 600px; /* Largeur maximale du cadre blanc */
+            padding: 20px; /* Ajuste le padding du texte */
+            margin-bottom: 20px; /* Espacement sous le cadre */
         }
-        .copy-container {
-            display: flex;
-            flex-direction: column; /* Dispose les éléments en colonne */
-            align-items: flex-start; /* Aligne les éléments au début du conteneur */
-            padding: 20px; /* Ajoute du padding autour du conteneur */
-            width: 100%;
-            max-width: 600px; /* Largeur maximale du cadre blanc */
-            background-color: white;
-            border: 1px solid white; /* Éviter le cadre noir */
-            border-radius: 10px;
+        .itw-container {
+            padding: 20px; /* Ajuste le padding du texte */
+            background-color: white; /* Fond blanc */
+            border-radius: 10px; /* Bordures arrondies */
+            overflow: hidden;
+            height: 400px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombrage léger */
         }
         .copy-button {
-            padding: 5px 10px; /* Ajuste le padding du bouton */
             background: #E07A5F; /* Couleur terracotta */
+            padding: 5px 10px; /* Ajuste le padding du bouton */
             color: white;
             border: none;
             border-radius: 4px; /* Bordures arrondies pour un effet plus doux */
             cursor: pointer;
             transition: background-color 0.3s; /* Transition douce pour le changement de couleur */
-            margin-bottom: 10px; /* Espacement sous le bouton */
+            margin-bottom: 20px; /* Espacement sous le bouton */
         }
         .copy-button:hover {
             background: #2cbf44; /* Couleur verte */
@@ -77,10 +62,9 @@
             background-color: white; /* Fond blanc pour le textarea */
             color: black; /* Couleur du texte */
             padding: 10px; /* Ajoute une marge interne pour le confort */
-            padding-right: 20px; /* Ajoute de l'espace à droite pour la barre de défilement */
             resize: none; /* Empêche le redimensionnement */
             width: 100%; /* Ajuste la largeur du textarea à son conteneur */
-            height: 100px; /* Ajuste la hauteur du textarea */
+            height: calc(100% - 40px); /* Ajuste la hauteur du textarea en tenant compte du padding */
             overflow: auto; /* Affiche la barre de défilement si nécessaire */
             box-sizing: border-box; /* Inclut la bordure et le padding dans la hauteur totale */
         }
@@ -100,7 +84,7 @@
             scrollbar-color: #E07A5F white; /* Couleur terracotta pour la partie mobile, blanc pour la partie fixe */
             scrollbar-width: thin; /* Réduit la largeur de la barre de défilement */
         }
-    </style>
+</style>
     
 </head>
 <body>
